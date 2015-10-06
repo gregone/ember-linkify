@@ -18,4 +18,6 @@ export function linkify(textToLinkify, windowTarget) {
   return Ember.String.htmlSafe(textToLinkify);
 }
 
-export default Ember.Helper.helper(linkify);
+export default Ember.Helper.extend({
+  linkify
+});
