@@ -15,7 +15,9 @@ export function linkify(textToLinkify, windowTarget) {
     return ' <a href="' + url + '" target="'+windowTarget+'">' + s.trim() + '</a> ';
   });
 
-  return new Ember.Handlebars.SafeString(textToLinkify);
+  return Ember.String.htmlSafe(textToLinkify);
 }
 
-export default Ember.Handlebars.makeBoundHelper(linkify);
+export default Ember.Helper.extend({
+  linkify
+});
